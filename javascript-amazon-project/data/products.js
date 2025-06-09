@@ -1,3 +1,4 @@
+// Important Component
 // Save the Data (Data Structure)
 const products = [
   {
