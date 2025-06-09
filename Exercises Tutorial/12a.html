@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>app</title>
+</head>
+
+<body>
+    <button class="add-button" onclick="
+        addMessage();
+        ">add</button>
+    <button class="remove-button" onclick="
+    removeMessage();
+    ">remove</button>
+
+    <p></p>
+
+    <button class="start-button" onclick="
+        changeLater();
+        ">Start</button>
+    <p></p>
+    <button class="add-to-cart-button" onclick="
+    addLater();
+    ">Add to cart</button>
+    <p class="added-message">
+
+    </p>
+
+
+    <script>
+        let add = function () {
+            console.log(2 + 3);
+        };
+
+        console.log(add());
+        add();
+
+        function runTwice(fun) {
+            fun();
+            fun();
+        }
+
+        runTwice(function () {
+            console.log('12b');
+        });
+        runTwice(add);
+
+        function changeLater() {
+            document.querySelector('.start-button').innerHTML = `Loading...`;
+            setTimeout(function () {
+                changeButton();
+            }, 1000);
+        }
+
+        function changeButton() {
+            const inText = document.querySelector('.start-button');
+
+
+            if (inText.innerHTML === 'Loading...') {
+                document.querySelector('.start-button').innerText = `Finished!`;
+
+            } else {
+                inText.innerText = `Start`;
+            }
+        }
+
+        function addLater() {
+
+            document.querySelector('.added-message').innerHTML = 'Added';
+
+            setTimeout(function addCart() {
+                document.querySelector('.added-message').innerHTML = ``;
+
+            }, 2000);
+
+
+        }
+
+        let num = 0;
+        function addMessage() {
+            num++;
+            console.log(num)
+        }
+
+        function removeMessage() {
+            num--;
+            console.log(num)
+        }
+
+        setInterval(function () {
+            const title1 = document.title;
+
+            if (num === 0) {
+                document.title = `app`;
+                clearInterval();
+            } else if (title1 === 'app') {
+                document.title = `(${num}) New messages`;
+            } else if (title1 === `(${num}) New messages`) {
+                document.title = `app`;
+            }
+        }, 1000);
+
+
+
+    </script>
+</body>
+
+</html>

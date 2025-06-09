@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercise 11</title>
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <script>
+        function searchString(array) {
+            for (let i = 0; i < array.length; i++) {
+                const index = array[i];
+
+
+                if ('search' === index) {
+                    console.log(i);
+                    break;
+                } else {
+                    console.log(-1);
+                }
+            }
+        }
+
+        searchString(['hello', 'world', 'search', 'good', 'search', 'search']);
+        searchString(['not', 'found']);
+
+        function findIndex(array, word) {
+            for (let i = 0; i < array.length; i++) {
+                const index = array[i];
+
+
+                if (word === index) {
+                    console.log(i);
+                    break;
+                } else {
+                    console.log(-1);
+                }
+            }
+        }
+
+        findIndex(['green', 'red', 'blue', 'red'], 'red');
+        findIndex(['green', 'red', 'blue', 'red'], 'yellow');
+
+        function removeEgg(foods) {
+            results = [];
+            for (let i = 0; i < foods.length; i++) {
+                const index = foods[i];
+
+                if ('egg' === index) {
+                    continue;
+                } else {
+                    results.push(index);
+                }
+            }
+            console.log(results);
+        }
+
+        removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']);
+
+        const foods = ['egg', 'apple', 'egg', 'egg', 'ham']
+        const food = foods.slice();
+
+
+        function removeTwoEggs(food) {
+            results = [];
+            let eggsRemoved = 0;
+
+            for (let i = 0; i < food.length; i++) {
+                food = food.reverse();
+                const index = food[i];
+
+
+                if ('egg' === index && eggsRemoved < 2) {
+                    eggsRemoved++;
+                    continue;
+                } else {
+                    results.push(index);
+                }
+            }
+            return results.reverse();
+        }
+
+        console.log(removeTwoEggs(food));
+        console.log(foods);
+
+        for (let i = 1; i <= 20; i++) {
+
+            if (i % 3 === 0) {
+                console.log('Fizz');
+                continue;
+            } else if (i % 5 === 0) {
+                console.log('Buzz');
+                continue;
+            } else if (i % 3 === 0 && i % 5 === 0) {
+                console.log('FizzBuzz');
+                continue;
+            }
+            console.log(i);
+        }
+
+        function findIndex(array, word) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] === word) {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+
+        function unique(array) {
+            const result = [];
+
+            for (let i = 0; i < array.length; i++) {
+                const word = array[i];
+
+                // Using the findIndex() function from above, we
+                // can check if the string is already in the
+                // result array. If it's not in the result array
+                // (index is -1), then add it to the result array.
+                if (findIndex(result, word) === -1) {
+                    result.push(word);
+                }
+            }
+
+            return result;
+        }
+
+        console.log(unique(['green', 'red', 'blue', 'red']));
+        console.log(unique(['red', 'green', 'green', 'red']));
+    </script>
+</body>
+
+</html>

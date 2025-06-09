@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercise 10</title>
+</head>
+
+<body>
+
+    <script>
+        let nums = [10, 20, 30];
+        nums[nums.length - 1] = 99;
+        console.log(nums);
+
+        function getLastValue(array) {
+            return array[array.length - 1];
+        }
+
+        nums = [1, 20, 22, 24, 5];
+        let text = ['hi', 'hello', 'good'];
+
+        console.log(getLastValue(nums));
+        console.log(getLastValue(text));
+
+        function arraySwap(array) {
+            const firstIndex = array[0];
+            array[0] = array[array.length - 1];
+            array[array.length - 1] = firstIndex;
+            console.log(array);
+        }
+
+        arraySwap(nums);
+        arraySwap(text);
+        /*         let i = 0
+                for (let i = 0; i <= 10; i += 2) {
+                    console.log(i);
+                } */
+
+
+        while (i <= 10) {
+            console.log(i);
+            i++;
+
+        }
+
+        i = 5
+        /*         for (i = 5; i >= 0; i--) {
+                    console.log(i);
+                } */
+
+        while (i >= 0) {
+            console.log(i);
+            2;
+        }
+
+        const newArray = [1, 2, 3];
+
+        function addOne(array) {
+            let newArray2 = [];
+
+
+            for (i = 0; 1 <= array.length; i++) {
+                let x = array[i];
+
+                newArray2.push(x * 2);
+
+            }
+            console.log(newArray2);
+        }
+
+        addOne(newArray);
+    </script>
+</body>
+
+</html>

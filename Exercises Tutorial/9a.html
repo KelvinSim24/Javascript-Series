@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercise 9</title>
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <button>
+        9a
+    </button>
+
+    <button class="js-second-button">
+        9b
+    </button>
+
+    <p>
+
+    </p>
+
+    <button class="button-1" onclick="
+    chooseFirst()
+    ">heads</button>
+    <button class="button-2" onclick="
+    chooseSecond()
+    ">tails</button>
+
+    <p class="js-choose">
+
+    </p>
+
+    <input class="name" placeholder="Name" onkeydown="
+    handleCostKeydown(event)">
+    <button onclick="
+    nameDisplay(event);
+    ">Submit</button>
+    <p class="js-display"></p>
+
+    <script>
+        console.log(document.querySelector('button'));
+
+        document.querySelector('.js-second-button').innerHTML = '9b done';
+
+        const button1 = document.querySelector('.button-1').innerTEXT;
+        const button2 = document.querySelector('.button-2').innerTEXT;
+
+        function chooseFirst() {
+            document.querySelector('.js-choose').innerHTML = `You chose: heads`;
+        }
+
+
+        function chooseSecond() {
+            document.querySelector('.js-choose').innerHTML = `You chose: tails`;
+        }
+
+        function nameDisplay() {
+            const userName = document.querySelector('.name').value;
+            document.querySelector('.js-display').innerHTML = `Your name is: ${userName}`
+        }
+
+        function handleCostKeydown(event) {
+            console.log(event.key)
+            if (event.key === 'Enter') {
+                nameDisplay();
+            }
+        }
+
+    </script>
+</body>
+
+</html>

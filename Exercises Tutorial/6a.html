@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercise 6</title>
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <script>
+        let hour = 17;
+        let name = 'Kelvin';
+
+        if (hour >= 6 && hour <= 12) {
+            console.log(`Good Morning! ${name}`);
+        } else if (hour >= 13 && hour <= 17) {
+            console.log(`Good Afternoon! ${name}`);
+        } else {
+            console.log(`Good Night! ${name}`);
+        }
+
+        let age = 8;
+        const isNotHoliday = true;
+
+        if ((age < 10 || age >= 55) && isNotHoliday) {
+            console.log('You are qualified for the discount !!!')
+            console.log('Dicsount')
+        } else {
+            console.log('You are not qualified for the discount !!!')
+            console.log('No Dicsount')
+        }
+
+        let variable = Math.random();
+
+        if (variable < 0.5) {
+            console.log(variable);
+            result = `Head`;
+        } else {
+            console.log(variable);
+            result = `Tails`;
+        }
+
+        const guess = 'Head';
+
+        if (guess === result) {
+            console.log(`You guessed Head, the coin is ${result}, you won !!!`);
+        } else {
+            console.log(`You guessed Head, the coin is ${result}, you lose !!!`);
+        }
+
+
+    </script>
+</body>
+
+</html>

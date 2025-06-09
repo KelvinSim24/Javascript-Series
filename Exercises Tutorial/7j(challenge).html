@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+  <p>
+    <button onclick="
+        calculation += '1';
+        updateCalculation();
+      ">1</button>
+
+    <button onclick="
+        calculation += '2';
+        updateCalculation();
+      ">2</button>
+
+    <button onclick="
+        calculation += '3';
+        updateCalculation();
+      ">3</button>
+
+    <button onclick="
+        calculation += ' + ';
+        updateCalculation();
+      ">+</button>
+  </p>
+
+  <p>
+    <button onclick="
+        calculation += '4';
+        updateCalculation();
+      ">4</button>
+
+    <button onclick="
+        calculation += '5';
+        updateCalculation();
+      ">5</button>
+
+    <button onclick="
+        calculation += '6';
+        updateCalculation();
+      ">6</button>
+
+    <button onclick="
+        calculation += ' - ';
+        updateCalculation();
+      ">-</button>
+  </p>
+
+  <p>
+    <button onclick="
+        calculation += '7';
+        updateCalculation();
+      ">7</button>
+
+    <button onclick="
+        calculation += '8';
+        updateCalculation();
+      ">8</button>
+
+    <button onclick="
+        calculation += '9';
+        updateCalculation();
+      ">9</button>
+
+    <button onclick="
+        calculation += ' * ';
+        updateCalculation();
+      ">*</button>
+  </p>
+
+  <p>
+    <button onclick="
+        calculation += '0';
+        updateCalculation();
+      ">0</button>
+
+    <button onclick="
+        calculation += '.';
+        updateCalculation();
+      ">.</button>
+
+    <button onclick="
+        // Note: eval() takes a string and runs it as code.
+        // Avoid using eval() in real world projects since
+        // it can potentially be given harmful code to run.
+        // Only use eval() for learning purposes.
+        calculation = eval(calculation);
+        updateCalculation();
+      ">=</button>
+
+    <button onclick="
+        calculation += ' / ';
+        updateCalculation();
+      ">/</button>
+  </p>
+
+  <p>
+    <button onclick="
+        calculation = '';
+        updateCalculation();
+      ">Clear</button>
+  </p>
+
+  <script>
+    let calculation = JSON.parse(localStorage.getItem('calculation')) || '';
+
+
+    calculation = '';
+
+    function updateCalculation() {
+      return console.log(calculation);
+    }
+
+    localStorage.setItem("calculation", JSON.stringify(calculation));
+
+    
+  </script>
+</body>
+
+</html>
