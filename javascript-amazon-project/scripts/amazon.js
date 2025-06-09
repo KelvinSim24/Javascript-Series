@@ -1,4 +1,4 @@
-import { cart } from '../data/cart.js';
+import { cart, addToCart } from '../data/cart.js';
 import { products } from '../data/products.js';
 
 
@@ -62,7 +62,6 @@ products.forEach((product) => {
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
-
 // We're going to use an object to save the timeout ids.
 // The reason we use an object is because each product
 // will have its own timeoutId. So an object lets us
@@ -77,6 +76,19 @@ document.querySelector('.js-products-grid').innerHTML = productsHTML;
 const addedMessageTimeouts = {};
 
 
+
+function updateCartQuantity() {
+  let cartQuantity = 0;
+
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  })
+
+  document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+  console.log(cart);
+
+}
+
 /* 
 Important Component
 Make add-to-cart button interactive (add eventListener) */
@@ -86,40 +98,8 @@ document.querySelectorAll('.js-add-to-cart')
       /*const productId = button.dataset.productId;*/
       const { productId } = button.dataset;
 
-      let matchingItem;
-
-      cart.forEach((item) => {
-        if (productId === item.productId) {
-
-          matchingItem = item;
-        }
-      });
-
-
-
-
-      const selectorNumber = Number(document.querySelector(`.js-quantity-selector-${productId}`).value);
-      console.log(selectorNumber);
-      console.log(typeof selectorNumber);
-
-
-      if (matchingItem) {
-        matchingItem.quantity += selectorNumber;
-      } else {
-        cart.push({
-          productId,
-          quantity: selectorNumber
-        });
-      }
-
-      let cartQuantity = 0;
-
-      cart.forEach((item) => {
-        cartQuantity += item.quantity;
-      })
-
-      document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
-      console.log(cart);
+      addToCart(productId);
+      updateCartQuantity();
 
       /* This is to show the ADDED message after clicked */
       const addedMessage = document.querySelector(`.js-added-to-cart-${productId}`);
