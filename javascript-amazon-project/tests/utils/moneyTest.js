@@ -16,4 +16,8 @@ describe('test suite: formatCurrency', () => {
     it('works with decimal values < 0.5', () => {
         expect(formatCurrency(2000.4)).toEqual('20.00');
     });
+
+    it('works with negative values', () => {
+        expect(formatCurrency(-2000)).toEqual('-20.00');
+    })
 });
