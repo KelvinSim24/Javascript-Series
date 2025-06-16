@@ -1,16 +1,18 @@
 import { cart, addToCart, calculateCartQuantity } from '../data/cart.js';
-import { products } from '../data/products.js';
+import { products, loadProducts } from '../data/products.js';
 import { formatCurrency } from './utils/money.js';
 
+loadProducts(renderProductsGrid);
 
-// Combine HTML together
-let productsHTML = '';
+function renderProductsGrid() {
+  // Combine HTML together
+  let productsHTML = '';
 
 
-// Important Component
-// Generate the HTML 
-products.forEach((product) => {
-  productsHTML += `
+  // Important Component
+  // Generate the HTML 
+  products.forEach((product) => {
+    productsHTML += `
     <div class="product-container">
         <div class="product-image-container">
           <img class="product-image" src="${product.image}">
@@ -61,68 +63,69 @@ products.forEach((product) => {
           Add to Cart
         </button>
       </div>`;
-});
-
-
-document.querySelector('.js-products-grid').innerHTML = productsHTML;
-
-// We're going to use an object to save the timeout ids.
-// The reason we use an object is because each product
-// will have its own timeoutId. So an object lets us
-// save multiple timeout ids for different products.
-// For example:
-// {
-//   'product-id1': 2,
-//   'product-id2': 5,
-//   ...
-// }
-// (2 and 5 are ids that are returned when we call setTimeout).
-const addedMessageTimeouts = {};
-
-
-
-
-
-
-
-
-const homeTopQuantity = document.querySelector('.js-cart-quantity');
-homeTopQuantity.innerHTML = `${calculateCartQuantity()}`;
-
-/* 
-Important Component
-Make add-to-cart button interactive (add eventListener) */
-document.querySelectorAll('.js-add-to-cart')
-  .forEach((button) => {
-    button.addEventListener('click', () => {
-      /*const productId = button.dataset.productId;*/
-      const { productId } = button.dataset;
-
-      addToCart(productId);
-      calculateCartQuantity();
-      homeTopQuantity.innerHTML = `${calculateCartQuantity()}`;
-
-      /* This is to show the ADDED message after clicked */
-      const addedMessage = document.querySelector(`.js-added-to-cart-${productId}`);
-      addedMessage.classList.add('added-message');
-
-      // Check if there's a previous timeout for this
-      // product. If there is, we should stop it.
-      const previousTimeoutId = addedMessageTimeouts[productId];
-      if (previousTimeoutId) {
-        clearTimeout(previousTimeoutId);
-      }
-
-      const timeoutId = setTimeout(() => {
-
-        addedMessage.classList.remove('added-message');
-      }, 2000);
-
-      // Save the timeoutId for this product
-      // so we can stop it later if we need to.
-      addedMessageTimeouts[productId] = timeoutId;
-
-    });
   });
 
 
+  document.querySelector('.js-products-grid').innerHTML = productsHTML;
+
+  // We're going to use an object to save the timeout ids.
+  // The reason we use an object is because each product
+  // will have its own timeoutId. So an object lets us
+  // save multiple timeout ids for different products.
+  // For example:
+  // {
+  //   'product-id1': 2,
+  //   'product-id2': 5,
+  //   ...
+  // }
+  // (2 and 5 are ids that are returned when we call setTimeout).
+  const addedMessageTimeouts = {};
+
+
+
+
+
+
+
+
+  const homeTopQuantity = document.querySelector('.js-cart-quantity');
+  homeTopQuantity.innerHTML = `${calculateCartQuantity()}`;
+
+  /* 
+  Important Component
+  Make add-to-cart button interactive (add eventListener) */
+  document.querySelectorAll('.js-add-to-cart')
+    .forEach((button) => {
+      button.addEventListener('click', () => {
+        /*const productId = button.dataset.productId;*/
+        const { productId } = button.dataset;
+
+        addToCart(productId);
+        calculateCartQuantity();
+        homeTopQuantity.innerHTML = `${calculateCartQuantity()}`;
+
+        /* This is to show the ADDED message after clicked */
+        const addedMessage = document.querySelector(`.js-added-to-cart-${productId}`);
+        addedMessage.classList.add('added-message');
+
+        // Check if there's a previous timeout for this
+        // product. If there is, we should stop it.
+        const previousTimeoutId = addedMessageTimeouts[productId];
+        if (previousTimeoutId) {
+          clearTimeout(previousTimeoutId);
+        }
+
+        const timeoutId = setTimeout(() => {
+
+          addedMessage.classList.remove('added-message');
+        }, 2000);
+
+        // Save the timeoutId for this product
+        // so we can stop it later if we need to.
+        addedMessageTimeouts[productId] = timeoutId;
+
+      });
+    });
+
+
+}
