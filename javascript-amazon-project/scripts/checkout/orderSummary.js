@@ -179,8 +179,6 @@ export function renderOrderSummary() {
       calculateCartQuantity();
       quantityLabel.innerHTML = newQuantity;
 
-      document.querySelector('.js-header-quantity').innerHTML = `${calculateCartQuantity()} items`
-
       renderCheckoutHeader();
       renderOrderSummary();
       renderPaymentSummary();
