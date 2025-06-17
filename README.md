@@ -1,6 +1,6 @@
-# JavaScript Course Projects
+# JavaScript Course Series
 
-A collection of beginner to intermediate JavaScript projects completed during my front-end development learning journey. This repository serves as a practice archive and internship portfolio.
+A collection of beginner to intermediate JavaScript projects completed during my front-end development learning journey. This repository serves as a practice archive and revision portfolio.
 
 ---
 
@@ -14,7 +14,7 @@ A simple front-end website layout inspired by Amazon's homepage.
 ---
 
 ### 🧮 Complete Calculator  
-A functional, interactive calculator built using HTML, CSS, and JavaScript.
+A functional, interactive calculator built using HTML, CSS and JavaScript.
 
 ![Calculator Screenshot](images/CalculatorProject.png)
 
@@ -38,7 +38,7 @@ A classic game recreated using JavaScript, allowing the user to play against a c
 
 ## 📌 Purpose
 
-To practice and reinforce JavaScript concepts through small, hands-on projects — and to build a personal showcase repository for internship applications.
+This repository serves as a practice space to apply JavaScript fundamentals and front-end web development concepts through small projects.
 
 ---
 
