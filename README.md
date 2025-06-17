@@ -16,7 +16,7 @@ A simple front-end website layout inspired by Amazon's homepage.
 ### 🧮 Complete Calculator  
 A functional, interactive calculator built using HTML, CSS, and JavaScript.
 
-![Calculator Screenshot](images/calculatorProject.png)
+![Calculator Screenshot](images/CalculatorProject.png)
 
 ---
 
