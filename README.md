@@ -7,7 +7,7 @@ A collection of beginner to intermediate JavaScript projects completed during my
 ## 📸 Project Previews
 
 ### 📦 Amazon Website Project  
-A simple front-end website layout inspired by Amazon's homepage.
+A simple front-end website layout inspired by Amazon's homepage. Other interactive pages like checkout, payment and tracking package are covered as well inside the coding. This is just the first page of the project.
 
 ![Amazon Website Screenshot](images/Amazon-HomePage.png)
 
