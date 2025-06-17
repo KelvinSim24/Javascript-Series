@@ -1,17 +1,46 @@
 # JavaScript Course Projects
 
-This repository contains my personal JavaScript projects and exercises completed while learning front-end development. It includes small web-based applications and practice exercises to strengthen my JavaScript skills.
+A collection of beginner to intermediate JavaScript projects completed during my front-end development learning journey. This repository serves as a practice archive and internship portfolio.
 
-## 📁 Projects Included
+---
 
-- **Amazon Website Project**  
-  A simple website layout inspired by Amazon. The site has a functional front-end interface, though not fully featured in all areas.
+## 📸 Project Previews
 
-- **Complete Calculator**  
-  A basic calculator built using HTML, CSS, and JavaScript, capable of handling standard arithmetic operations.
+### 📦 Amazon Website Project  
+A simple front-end website layout inspired by Amazon's homepage.
 
-- **Rock Paper Scissors Game**  
-  A web-based version of the classic Rock Paper Scissors game, allowing users to play against a computer opponent.
+![Amazon Website Screenshot](images/Amazon-HomePage.png)
+
+---
+
+### 🧮 Complete Calculator  
+A functional, interactive calculator built using HTML, CSS, and JavaScript.
+
+![Calculator Screenshot](images/calculatorProject.png)
+
+---
+
+### ✊🖐✌️ Rock Paper Scissors Game  
+A classic game recreated using JavaScript, allowing the user to play against a computer opponent.
+
+![Rock Paper Scissors Screenshot](images/RockPaperScissorsProject.png)
+
+---
+
+## ✨ Features
+
+- Multiple beginner-to-intermediate JavaScript projects
+- Responsive layout designs (where applicable)
+- Interactive JavaScript functionality
+- Clean and simple user interfaces
+
+---
+
+## 📌 Purpose
+
+To practice and reinforce JavaScript concepts through small, hands-on projects — and to build a personal showcase repository for internship applications.
+
+---
 
 ## 🛠️ Tools & Technologies
 
@@ -19,7 +48,8 @@ This repository contains my personal JavaScript projects and exercises completed
 - CSS
 - JavaScript
 - Visual Studio Code
+- Git & GitHub
 
-## 📌 Purpose
+---
 
-This repository serves as a practice space to apply JavaScript fundamentals and front-end web development concepts through small projects.
+
